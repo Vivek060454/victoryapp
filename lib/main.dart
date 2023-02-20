@@ -1,17 +1,9 @@
-
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:victoryupi/screen/Home.dart';
+import 'package:wowc/regis.dart';
 
-
-Future<void> main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await Firebase.initializeApp();
-
-  //await NotificationService.initialize();
-  runApp(MyApp());}
-
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,13 +12,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData().copyWith(
+
         scaffoldBackgroundColor: Colors.white,
         errorColor: Colors.red,
-        colorScheme: ThemeData().colorScheme.copyWith(primary: Colors.blue,),
+        colorScheme: ThemeData().colorScheme.copyWith(primary: Color.fromRGBO(250,3,120,1),),
+        primaryColor:  Color.fromRGBO(1,202,0,100),
+
       ),
-      home: const Home(),
+      home: const Regis(),
     );
   }
 }
+
